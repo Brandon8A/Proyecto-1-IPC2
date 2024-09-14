@@ -1,0 +1,7 @@
+create schema CONTROL_SITIO_WEB_REVISTAS;
+
+create table AUTOR( usuario VARCHAR(25) not null, contraseña VARCHAR(30) not null, path_foto VARCHAR(100) not null, hobbies VARCHAR(75) not null, temas_interes VARCHAR(75) not null, gustos VARCHAR(75) not null, descripcion VARCHAR(100) not null, CONSTRAINT PK_AUTOR PRIMARY KEY(usuario));
+
+create table REVISTA( id_revista INT not null, categoria VARCHAR(20) not null, descripcion VARCHAR(75) not null, cantidad_me_gusta INT not null, costo_por_dia DOUBLE not null, fecha_creacion DATE, CONSTRAINT PK_REVISTA PRIMARY KEY(id_revista), usuario VARCHAR(25) not null, CONSTRAINT FK_AUTOR_IN_USUARIO FOREIGN KEY(usuario) references AUTOR(usuario));
+
+create table SUSCRIPTOR( usuario VARCHAR(25) not null, contraseña VARCHAR(25) not null, path_foto VARCHAR(100) not null, hobbies VARCHAR(75) not null, temas_interes VARCHAR(75) not null, gustos VARCHAR(75) not null, descripcion VARCHAR(75) not null, id_revista_suscrito INT, CONSTRAINT PK_SUSCRIPTOR PRIMARY KEY(usuario), CONSTRAINT FK_REVISTA_IN_ID_REVISTA FOREIGN KEY(id_revista_suscrito) references REVISTA(id_revista));
