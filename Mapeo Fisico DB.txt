@@ -5,3 +5,13 @@ create table AUTOR( usuario VARCHAR(25) not null, contraseña VARCHAR(30) not nu
 create table REVISTA( id_revista INT not null, categoria VARCHAR(20) not null, descripcion VARCHAR(75) not null, cantidad_me_gusta INT not null, costo_por_dia DOUBLE not null, fecha_creacion DATE, CONSTRAINT PK_REVISTA PRIMARY KEY(id_revista), usuario VARCHAR(25) not null, CONSTRAINT FK_AUTOR_IN_USUARIO FOREIGN KEY(usuario) references AUTOR(usuario));
 
 create table SUSCRIPTOR( usuario VARCHAR(25) not null, contraseña VARCHAR(25) not null, path_foto VARCHAR(100) not null, hobbies VARCHAR(75) not null, temas_interes VARCHAR(75) not null, gustos VARCHAR(75) not null, descripcion VARCHAR(75) not null, id_revista_suscrito INT, CONSTRAINT PK_SUSCRIPTOR PRIMARY KEY(usuario), CONSTRAINT FK_REVISTA_IN_ID_REVISTA FOREIGN KEY(id_revista_suscrito) references REVISTA(id_revista));
+
+create table SUSCRIPCION( id_suscripcion INT not null, fecha_suscripcion DATE not null, usuario VARCHAR(25) not null, id_revista INT not null, CONSTRAINT PK_SUSCRIPCION PRIMARY KEY(id_suscripcion), CONSTRAINT FK_SUSCRIPTOR_IN_USUARIO FOREIGN KEY(usuario) references SUSCRIPTOR(usuario), CONSTRAINT FK_REVISTA_IN_ID_REVISTAS FOREIGN KEY(id_revista) references REVISTA(id_revista));
+
+create table COMENTARIO( no_comentario INT not null, contenido VARCHAR(75) not null, id_revista INT not null, usuario VARCHAR(25) not null, CONSTRAINT PK_COMENTARIO PRIMARY KEY(no_comentario), CONSTRAINT FK_REVISTA_IN_ID_REVISTA_COMENTARIO FOREIGN KEY(id_revista) references REVISTA(id_revista));
+
+create table USUARIO_ESPECIAL( usuario VARCHAR(25) not null, contraseña VARCHAR(25) not null, cantidad_dinero DOUBLE not null, path_foto VARCHAR(100) not null, hobbies VARCHAR(75) not null, temas_interes VARCHAR(75) not null, gustos VARCHAR(75) not null, descripcion VARCHAR(75) not null);
+
+create table ANUNCIO( id_anuncio INT not null, tipo VARCHAR(25) not null, vigencia DATE not null, activo BOOLEAN, precio DOUBLE not null, fecha_pago DATE not null, usuario VARCHAR(25), CONSTRAINT PK_ANUNCIO PRIMARY KEY(id_anuncio), CONSTRAINT FK_USUARIO_ESPECIAL_IN_USUARIO FOREIGN KEY(usuario) references USUARIO_ESPECIAL(usuario));
+
+create table ADMINISTRADOR( usuario VARCHAR(25) not null, contraseña VARCHAR(25) not null, path_foto VARCHAR(100) not null, hobbies VARCHAR(100) not null, temas_interes VARCHAR(100) not null, gustos VARCHAR(100) not null, descripcion VARCHAR(100), CONSTRAINT PK_ADMINISTRADOR PRIMARY KEY(usuario));
