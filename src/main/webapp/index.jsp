@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label for="contraseña">Contraseña:</label>
-                            <input id="contraseña" name="contraseña" class="form-control" placeholder="Ingrese la contraseña"/>
+                            <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Ingrese la contraseña"/>
                         </div>
                         <div class="form-group">
                             <label for="tipoUsuario">Usuario:</label>

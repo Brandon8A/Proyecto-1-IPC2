@@ -1,2 +1,7 @@
+/home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/backend/usuarios/Usuario.java
 /home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/controllers/ControladorIniciarSesion.java
+/home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/backend/database/ConexionDB.java
+/home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/controllers/ControladorRegistrarUsuario.java
 /home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/exceptions/ExceptionRevistasWeb.java
+/home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/backend/usuarios/TipoUsuario.java
+/home/brandon/NetBeansProjects/Proyecto1_IPC2/src/main/java/backend/database/CreadorUsuarios.java

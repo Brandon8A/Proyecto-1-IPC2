@@ -1,2 +1,7 @@
-exceptions/ExceptionRevistasWeb.class
+backend/usuarios/TipoUsuario.class
 controllers/ControladorIniciarSesion.class
+controllers/ControladorRegistrarUsuario.class
+backend/database/CreadorUsuarios.class
+exceptions/ExceptionRevistasWeb.class
+backend/database/ConexionDB.class
+backend/usuarios/Usuario.class
